@@ -59,4 +59,6 @@ public class HibernateFreelancerDal implements IFreelancerDal{
     }
 
 
+
+
 }

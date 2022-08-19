@@ -13,4 +13,5 @@ public interface IFreelancerDal {
     void delete(Freelancer freelancer);
 
     Freelancer getById(int id);
+
 }

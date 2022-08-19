@@ -15,6 +15,8 @@ public interface IFreelancerService {
 
     Freelancer getById(int id);
 
+
+
     //get by validation
 
 }

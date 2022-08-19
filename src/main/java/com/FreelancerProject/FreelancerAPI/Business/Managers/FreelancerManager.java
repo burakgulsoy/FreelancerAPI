@@ -49,4 +49,8 @@ public class FreelancerManager implements IFreelancerService {
     public Freelancer getById(int id) {
         return this.freelancerDal.getById(id);
     }
+
+
+
+
 }
