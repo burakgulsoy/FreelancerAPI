@@ -13,4 +13,7 @@ public interface IFreelancerDal {
     void delete(Freelancer freelancer);
 
     Freelancer getById(int id);
+
+    List<Freelancer> getValidatedFreelancers();
+    List<Freelancer> getUnvalidatedFreelancers();
 }

@@ -49,4 +49,17 @@ public class FreelancerManager implements IFreelancerService {
     public Freelancer getById(int id) {
         return this.freelancerDal.getById(id);
     }
+
+    @Override
+    public List<Freelancer> getValidatedFreelancers() {
+        return this.freelancerDal.getValidatedFreelancers();
+    }
+
+    @Override
+    public List<Freelancer> getUnvalidatedFreelancers() {
+        return this.freelancerDal.getUnvalidatedFreelancers();
+
+    }
+
+
 }

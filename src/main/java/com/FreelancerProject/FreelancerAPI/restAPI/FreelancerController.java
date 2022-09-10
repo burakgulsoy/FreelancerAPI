@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class FreelancerController {
 
     private IFreelancerService freelancerService;
@@ -43,5 +44,14 @@ public class FreelancerController {
         return freelancerService.getById(freelancer_id);
     }
 
-    //get by validation
+    @GetMapping("/validatedfreelancers")
+    public List<Freelancer> getValidatedFreelancers() {
+        return freelancerService.getValidatedFreelancers();
+    }
+
+    @GetMapping("/unvalidatedfreelancers")
+    public List<Freelancer> getUnvalidatedFreelancers() {
+        return freelancerService.getUnvalidatedFreelancers();
+    }
+
 }

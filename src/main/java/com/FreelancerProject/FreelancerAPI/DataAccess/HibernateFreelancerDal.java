@@ -58,5 +58,21 @@ public class HibernateFreelancerDal implements IFreelancerDal{
         return freelancer;
     }
 
+    @Override
+    public List<Freelancer> getValidatedFreelancers() {
+        Session session = entityManager.unwrap(Session.class);
+
+        List<Freelancer> freelancers = session.createQuery("from Freelancer where is_validated = 1",Freelancer.class).getResultList();
+        return freelancers;
+    }
+
+    @Override
+    public List<Freelancer> getUnvalidatedFreelancers() {
+        Session session = entityManager.unwrap(Session.class);
+
+        List<Freelancer> freelancers = session.createQuery("from Freelancer where is_validated = 0",Freelancer.class).getResultList();
+        return freelancers;
+    }
+
 
 }
