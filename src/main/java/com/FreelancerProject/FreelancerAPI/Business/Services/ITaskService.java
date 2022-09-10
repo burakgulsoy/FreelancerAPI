@@ -14,4 +14,8 @@ public interface ITaskService {
     void delete(Task task);
 
     Task getById(int id);
+
+    List<Task> getAllToDo();
+    List<Task> getAllInProgress();
+    List<Task> getAllDone();
 }

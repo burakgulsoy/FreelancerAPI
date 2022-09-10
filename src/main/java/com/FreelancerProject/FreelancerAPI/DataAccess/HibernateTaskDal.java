@@ -56,4 +56,28 @@ public class HibernateTaskDal implements ITaskDal {
         Task task = session.get(Task.class,id);
         return task;
     }
+
+    @Override
+    public List<Task> getAllToDo() {
+        Session session = entityManager.unwrap(Session.class);
+
+        List<Task> tasks = session.createQuery("from Task where task_type='TO_DO'",Task.class).getResultList();
+        return tasks;
+    }
+
+    @Override
+    public List<Task> getAllInProgress() {
+        Session session = entityManager.unwrap(Session.class);
+
+        List<Task> tasks = session.createQuery("from Task where task_type='IN_PROGRESS'",Task.class).getResultList();
+        return tasks;
+    }
+
+    @Override
+    public List<Task> getAllDone() {
+        Session session = entityManager.unwrap(Session.class);
+
+        List<Task> tasks = session.createQuery("from Task where task_type='DONE'",Task.class).getResultList();
+        return tasks;
+    }
 }

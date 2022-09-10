@@ -31,13 +31,7 @@ public class TaskController {
     @PostMapping("/updatetask")
     public void updateTask(@RequestBody Task task) {
         taskService.update(task);
-//        System.out.println("task id: " + task.getTask_id());
-//        System.out.println("task description: "+task.getTask_description());
-//        System.out.println("task type: " + task.getTask_type());
-//        System.out.println("task begin date: " + task.getTask_begin_date());
-//        System.out.println("task end date: " + task.getTask_end_date());
-//        System.out.println("task freelancer id: " + task.getFreelancer_id());
-//        System.out.println("task is updated");
+
     }
 
     @PostMapping("/deletetask")
@@ -48,5 +42,20 @@ public class TaskController {
     @GetMapping("/tasks/{task_id}")
     public Task getById(@PathVariable int task_id) {
         return taskService.getById(task_id);
+    }
+
+    @GetMapping("/tasksToDo")
+    public List<Task> getAllToDo() {
+        return taskService.getAllToDo();
+    }
+
+    @GetMapping("/tasksInProgress")
+    public List<Task> getAllInProgress() {
+        return taskService.getAllInProgress();
+    }
+
+    @GetMapping("/tasksDone")
+    public List<Task> getAllDone() {
+        return taskService.getAllDone();
     }
 }

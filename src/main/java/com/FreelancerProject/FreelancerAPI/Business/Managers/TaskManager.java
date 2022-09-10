@@ -48,4 +48,19 @@ public class TaskManager implements ITaskService {
     public Task getById(int id) {
         return this.TaskDal.getById(id);
     }
+
+    @Override
+    public List<Task> getAllToDo() {
+        return this.TaskDal.getAllToDo();
+    }
+
+    @Override
+    public List<Task> getAllInProgress() {
+        return this.TaskDal.getAllInProgress();
+    }
+
+    @Override
+    public List<Task> getAllDone() {
+        return this.TaskDal.getAllDone();
+    }
 }
