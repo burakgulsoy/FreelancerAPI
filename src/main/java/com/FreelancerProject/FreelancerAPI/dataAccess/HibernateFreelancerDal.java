@@ -1,6 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.dataAccess;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
+import com.FreelancerProject.FreelancerAPI.entities.Freelancer;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public class HibernateFreelancerDal implements IFreelancerDal{
-
-    private EntityManager entityManager;
+//    TODO: implement try catch for sessions
+    private final EntityManager entityManager;
 
     @Autowired
     public HibernateFreelancerDal(EntityManager entityManager) {
@@ -24,13 +24,11 @@ public class HibernateFreelancerDal implements IFreelancerDal{
     public List<Freelancer> getAll() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Freelancer> freelancers = session.createQuery("from Freelancer",Freelancer.class).getResultList();
-        return freelancers;
+        return session.createQuery("from Freelancer",Freelancer.class).getResultList();
     }
 
     @Override
     public void add(Freelancer freelancer) {
-        //if gerekebilir
         Session session = entityManager.unwrap(Session.class);
         session.save(freelancer);
     }
@@ -54,25 +52,20 @@ public class HibernateFreelancerDal implements IFreelancerDal{
     public Freelancer getById(int id) {
         Session session = entityManager.unwrap(Session.class);
 
-        Freelancer freelancer = session.get(Freelancer.class, id);
-        return freelancer;
+        return session.get(Freelancer.class, id);
     }
 
     @Override
     public List<Freelancer> getValidatedFreelancers() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Freelancer> freelancers = session.createQuery("from Freelancer where is_validated = 1",Freelancer.class).getResultList();
-        return freelancers;
+        return session.createQuery("from Freelancer where is_validated = 1",Freelancer.class).getResultList();
     }
 
     @Override
     public List<Freelancer> getUnvalidatedFreelancers() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Freelancer> freelancers = session.createQuery("from Freelancer where is_validated = 0",Freelancer.class).getResultList();
-        return freelancers;
+        return session.createQuery("from Freelancer where is_validated = 0",Freelancer.class).getResultList();
     }
-
-
 }

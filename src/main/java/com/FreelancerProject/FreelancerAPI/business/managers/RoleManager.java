@@ -1,8 +1,8 @@
-package com.FreelancerProject.FreelancerAPI.Business.Managers;
+package com.FreelancerProject.FreelancerAPI.business.managers;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.IRoleService;
-import com.FreelancerProject.FreelancerAPI.DataAccess.IRoleDal;
-import com.FreelancerProject.FreelancerAPI.Entities.Role;
+import com.FreelancerProject.FreelancerAPI.business.services.IRoleService;
+import com.FreelancerProject.FreelancerAPI.dataAccess.IRoleDal;
+import com.FreelancerProject.FreelancerAPI.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class RoleManager implements IRoleService {
 
-    IRoleDal iRoleDal;
+    final IRoleDal iRoleDal;
 
     @Autowired
     public RoleManager(IRoleDal iRoleDal) {

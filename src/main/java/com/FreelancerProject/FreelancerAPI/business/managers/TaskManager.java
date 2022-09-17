@@ -1,8 +1,8 @@
-package com.FreelancerProject.FreelancerAPI.Business.Managers;
+package com.FreelancerProject.FreelancerAPI.business.managers;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.ITaskService;
-import com.FreelancerProject.FreelancerAPI.DataAccess.ITaskDal;
-import com.FreelancerProject.FreelancerAPI.Entities.Task;
+import com.FreelancerProject.FreelancerAPI.business.services.ITaskService;
+import com.FreelancerProject.FreelancerAPI.dataAccess.ITaskDal;
+import com.FreelancerProject.FreelancerAPI.entities.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class TaskManager implements ITaskService {
 
-    ITaskDal TaskDal;
+    final ITaskDal TaskDal;
 
     @Autowired
     public TaskManager(ITaskDal taskDal) {

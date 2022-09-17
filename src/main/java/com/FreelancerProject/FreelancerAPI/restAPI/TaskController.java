@@ -1,7 +1,7 @@
 package com.FreelancerProject.FreelancerAPI.restAPI;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.ITaskService;
-import com.FreelancerProject.FreelancerAPI.Entities.Task;
+import com.FreelancerProject.FreelancerAPI.business.services.ITaskService;
+import com.FreelancerProject.FreelancerAPI.entities.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
 
-    private ITaskService taskService;
+    private final ITaskService taskService;
 
     @Autowired
     public TaskController(ITaskService taskService) {

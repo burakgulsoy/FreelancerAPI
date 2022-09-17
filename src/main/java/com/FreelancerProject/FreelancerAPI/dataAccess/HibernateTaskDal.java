@@ -1,6 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.dataAccess;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Task;
+import com.FreelancerProject.FreelancerAPI.entities.Task;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class HibernateTaskDal implements ITaskDal {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public HibernateTaskDal(EntityManager entityManager) {
@@ -24,8 +24,7 @@ public class HibernateTaskDal implements ITaskDal {
     public List<Task> getAll() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Task> tasks = session.createQuery("from Task",Task.class).getResultList();
-        return tasks;
+        return session.createQuery("from Task",Task.class).getResultList();
     }
 
     @Override
@@ -53,31 +52,27 @@ public class HibernateTaskDal implements ITaskDal {
     public Task getById(int id) {
         Session session = entityManager.unwrap(Session.class);
 
-        Task task = session.get(Task.class,id);
-        return task;
+        return session.get(Task.class,id);
     }
 
     @Override
     public List<Task> getAllToDo() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Task> tasks = session.createQuery("from Task where task_type='TO_DO'",Task.class).getResultList();
-        return tasks;
+        return session.createQuery("from Task where task_type='TO_DO'",Task.class).getResultList();
     }
 
     @Override
     public List<Task> getAllInProgress() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Task> tasks = session.createQuery("from Task where task_type='IN_PROGRESS'",Task.class).getResultList();
-        return tasks;
+        return session.createQuery("from Task where task_type='IN_PROGRESS'",Task.class).getResultList();
     }
 
     @Override
     public List<Task> getAllDone() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Task> tasks = session.createQuery("from Task where task_type='DONE'",Task.class).getResultList();
-        return tasks;
+        return session.createQuery("from Task where task_type='DONE'",Task.class).getResultList();
     }
 }

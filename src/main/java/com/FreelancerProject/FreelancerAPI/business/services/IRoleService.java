@@ -1,6 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.Business.Services;
+package com.FreelancerProject.FreelancerAPI.business.services;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Role;
+import com.FreelancerProject.FreelancerAPI.entities.Role;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.dataAccess;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
+import com.FreelancerProject.FreelancerAPI.entities.Freelancer;
 import java.util.List;
 
 public interface IFreelancerDal {

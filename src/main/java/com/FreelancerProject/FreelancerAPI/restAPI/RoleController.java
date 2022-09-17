@@ -1,7 +1,7 @@
 package com.FreelancerProject.FreelancerAPI.restAPI;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.IRoleService;
-import com.FreelancerProject.FreelancerAPI.Entities.Role;
+import com.FreelancerProject.FreelancerAPI.business.services.IRoleService;
+import com.FreelancerProject.FreelancerAPI.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class RoleController {
 
-    private IRoleService roleService;
+    private final IRoleService roleService;
 
     @Autowired
     public RoleController(IRoleService roleService) {

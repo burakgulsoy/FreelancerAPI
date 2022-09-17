@@ -1,7 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.Entities;
+package com.FreelancerProject.FreelancerAPI.entities;
 
 import javax.persistence.*;
-import java.util.Date;
 
 
 @Entity

@@ -1,11 +1,10 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.business.services;
 
-
-import com.FreelancerProject.FreelancerAPI.Entities.Task;
+import com.FreelancerProject.FreelancerAPI.entities.Task;
 
 import java.util.List;
 
-public interface ITaskDal {
+public interface ITaskService {
     List<Task> getAll();
 
     void add(Task task);
@@ -19,5 +18,4 @@ public interface ITaskDal {
     List<Task> getAllToDo();
     List<Task> getAllInProgress();
     List<Task> getAllDone();
-
 }

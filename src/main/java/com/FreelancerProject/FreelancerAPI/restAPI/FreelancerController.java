@@ -1,7 +1,7 @@
 package com.FreelancerProject.FreelancerAPI.restAPI;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.IFreelancerService;
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
+import com.FreelancerProject.FreelancerAPI.business.services.IFreelancerService;
+import com.FreelancerProject.FreelancerAPI.entities.Freelancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class FreelancerController {
 
-    private IFreelancerService freelancerService;
+    private final IFreelancerService freelancerService;
 
     @Autowired
     public FreelancerController(IFreelancerService freelancerService) {

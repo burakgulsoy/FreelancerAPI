@@ -1,7 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.dataAccess;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
-import com.FreelancerProject.FreelancerAPI.Entities.Role;
+import com.FreelancerProject.FreelancerAPI.entities.Role;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,7 +12,7 @@ import java.util.List;
 @Repository
 public class HibernateRoleDal implements IRoleDal{
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public HibernateRoleDal(EntityManager entityManager) {
@@ -25,8 +24,7 @@ public class HibernateRoleDal implements IRoleDal{
     public List<Role> getAll() {
         Session session = entityManager.unwrap(Session.class);
 
-        List<Role> roles = session.createQuery("from Role",Role.class).getResultList();
-        return roles;
+        return session.createQuery("from Role",Role.class).getResultList();
     }
 
     @Override
@@ -53,7 +51,6 @@ public class HibernateRoleDal implements IRoleDal{
     public Role getById(int id) {
         Session session = entityManager.unwrap(Session.class);
 
-        Role role = session.get(Role.class, id);
-        return role;
+        return session.get(Role.class, id);
     }
 }

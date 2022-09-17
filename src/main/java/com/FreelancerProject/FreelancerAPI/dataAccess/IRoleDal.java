@@ -1,7 +1,6 @@
-package com.FreelancerProject.FreelancerAPI.DataAccess;
+package com.FreelancerProject.FreelancerAPI.dataAccess;
 
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
-import com.FreelancerProject.FreelancerAPI.Entities.Role;
+import com.FreelancerProject.FreelancerAPI.entities.Role;
 
 import java.util.List;
 

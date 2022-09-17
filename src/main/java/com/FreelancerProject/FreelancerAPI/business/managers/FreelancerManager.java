@@ -1,8 +1,8 @@
-package com.FreelancerProject.FreelancerAPI.Business.Managers;
+package com.FreelancerProject.FreelancerAPI.business.managers;
 
-import com.FreelancerProject.FreelancerAPI.Business.Services.IFreelancerService;
-import com.FreelancerProject.FreelancerAPI.DataAccess.IFreelancerDal;
-import com.FreelancerProject.FreelancerAPI.Entities.Freelancer;
+import com.FreelancerProject.FreelancerAPI.business.services.IFreelancerService;
+import com.FreelancerProject.FreelancerAPI.dataAccess.IFreelancerDal;
+import com.FreelancerProject.FreelancerAPI.entities.Freelancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class FreelancerManager implements IFreelancerService {
 
-    IFreelancerDal freelancerDal;
+    final IFreelancerDal freelancerDal;
 
     @Autowired
     public FreelancerManager(IFreelancerDal freelancerDal) {
@@ -28,7 +28,6 @@ public class FreelancerManager implements IFreelancerService {
     @Override
     @Transactional
     public void add(Freelancer freelancer) {
-        //iş kuralları yazılır
         this.freelancerDal.add(freelancer);
     }
 
@@ -58,8 +57,5 @@ public class FreelancerManager implements IFreelancerService {
     @Override
     public List<Freelancer> getUnvalidatedFreelancers() {
         return this.freelancerDal.getUnvalidatedFreelancers();
-
     }
-
-
 }
