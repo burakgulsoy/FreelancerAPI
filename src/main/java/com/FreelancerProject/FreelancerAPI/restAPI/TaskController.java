@@ -32,7 +32,6 @@ public class TaskController {
     @PostMapping("/updatetask")
     public void updateTask(@RequestBody Task task) {
         taskService.update(task);
-
     }
 
     @PostMapping("/deletetask")
