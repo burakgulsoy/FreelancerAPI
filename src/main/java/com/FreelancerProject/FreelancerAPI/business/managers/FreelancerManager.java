@@ -35,6 +35,8 @@ public class FreelancerManager implements IFreelancerService {
     @Transactional
     public void update(Freelancer freelancer) {
         this.freelancerDal.update(freelancer);
+        System.out.println("Changing things and things....");
+
     }
 
     @Override
