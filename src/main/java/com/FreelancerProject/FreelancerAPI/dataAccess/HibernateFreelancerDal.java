@@ -44,8 +44,7 @@ public class HibernateFreelancerDal implements IFreelancerDal{
     public void delete(Freelancer freelancer) {
         Session session = entityManager.unwrap(Session.class);
 
-        Freelancer freelancerToDelete = session.get(Freelancer.class, freelancer.getFreelancer_id());
-        session.delete(freelancerToDelete);
+        session.delete(session.get(Freelancer.class, freelancer.getFreelancer_id()));
     }
 
     @Override
